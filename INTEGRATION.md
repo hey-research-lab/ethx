@@ -107,7 +107,10 @@ contract  Example {
 
 	event  RequestRedeemed(address  receiver, uint256  ethTransferred);
 
-	address  private  STADER_CONFIG_ADDRESS = '0x4ABEF2263d5A5ED582FC9A9789a41D85b68d69DB'; //mainnet address
+	address  private  STADER_CONFIG_ADDRESS = 0x4ABEF2263d5A5ED582FC9A9789a41D85b68d69DB; //mainnet address
+
+	// UserWithdrawalManager.claim sends the ETH to the request owner, this contract
+	receive() external payable {}
 
 	/**
 	 * @notice function to stake ETH and mint ETHx by interacting with StaderStakePoolManager Contract
